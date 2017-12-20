@@ -11,7 +11,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 ##### launchSetting.json
 
-```javascript
+{% highlight js %}
 "iisSettings": {
     "windowsAuthentication": true,
     "anonymousAuthentication": false,
@@ -20,8 +20,8 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
       "sslPort": 0
     }
   }
+{% endhighlight %}
 
-```
 ##### web.config
 
 ```javascript
