@@ -30,10 +30,10 @@ After above command was ran successfully, you should find a new folder called bo
 
 Open angular-cli.json file, update styles declaration.
 
-```JavaScript
+{% highlight JavaScript %}
 "styles": [
   "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ]
-```
+{% endhighlight %}
 
 You're all set, it's time to give it a try. 
