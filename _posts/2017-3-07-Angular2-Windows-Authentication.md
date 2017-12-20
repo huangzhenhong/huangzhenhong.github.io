@@ -24,13 +24,13 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 ##### web.config
 
-```javascript
+{% highlight js %}
     <aspNetCore processPath="%LAUNCHER_PATH%" 
                 arguments="%LAUNCHER_ARGS%" 
                 stdoutLogEnabled="false" 
                 stdoutLogFile=".\logs\stdout" 
                 forwardWindowsAuthToken="true" />
-```             
+{% endhighlight %}  
 
 ### Enabling Cross-Origin Request(CORS)
 
@@ -49,7 +49,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 Add the orgins which will access your WEB API, for example: http://localhost
 
-```csharp
+{% highlight c# %}
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
@@ -68,11 +68,11 @@ Add the orgins which will access your WEB API, for example: http://localhost
             services.AddMvc();
 
         }
-```
+{% endhighlight %}
 
 - option 1:　you can enable it globally by adding it in following method
 
-```csharp
+{% highlight c# %}
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -87,11 +87,11 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
             app.UseMvc();
         }
-```  
+{% endhighlight %}
 
 - Option 2:　Or you can enable it in the controller class or action method
 
-```sharp
+{% highlight c# %}
     [Authorize]
     [Route("api/values")]
     [EnableCors("AllowSpecificOrigin")]
@@ -110,7 +110,7 @@ Add the orgins which will access your WEB API, for example: http://localhost
         }
 
     }
-   ``` 
+{% endhighlight %}
    
 ### Deploy WebApi to IIS 7
 
@@ -122,13 +122,13 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
 By default, the browser will not send user authentication details to the server. We must configure out Angular2 application requests to send this information. 
 
-```javascript
+{% highlight js %}
 this.http.get(this.testUrl, { withCredentials: true})
     .subscribe((data:any) => console.log(data));
 
 this.http.get(this.authUrl, {withCredentials: true})
     .subscribe((data:any) => console.log(data));
-```
+{% endhighlight %}
 
 ## Summary
 
