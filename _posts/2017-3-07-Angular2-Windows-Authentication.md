@@ -24,7 +24,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 ##### web.config
 
-{% highlight js %}
+{% highlight javascript %}
     <aspNetCore processPath="%LAUNCHER_PATH%" 
                 arguments="%LAUNCHER_ARGS%" 
                 stdoutLogEnabled="false" 
