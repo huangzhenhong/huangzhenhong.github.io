@@ -11,7 +11,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 ##### launchSetting.json
 
-```
+```js
 "iisSettings": {
     "windowsAuthentication": true,
     "anonymousAuthentication": false,
@@ -24,12 +24,13 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 ```
 ##### web.config
 
+```js
     <aspNetCore processPath="%LAUNCHER_PATH%" 
                 arguments="%LAUNCHER_ARGS%" 
                 stdoutLogEnabled="false" 
                 stdoutLogFile=".\logs\stdout" 
                 forwardWindowsAuthToken="true" />
-                
+```             
 
 ### Enabling Cross-Origin Request(CORS)
 
@@ -47,7 +48,8 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 >> using Microsoft.AspNetCore.Cors;
 
 Add the orgins which will access your WEB API, for example: http://localhost
-```
+
+```c#
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
@@ -67,9 +69,10 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
         }
 ```
+
 - option 1:　you can enable it globally by adding it in following method
 
-```
+```c#
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -84,10 +87,11 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
             app.UseMvc();
         }
-```     
+```  
+
 - Option 2:　Or you can enable it in the controller class or action method
 
-```
+```c#
     [Authorize]
     [Route("api/values")]
     [EnableCors("AllowSpecificOrigin")]
@@ -107,6 +111,7 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
     }
    ``` 
+   
 ### Deploy WebApi to IIS 7
 
 > The deployment procedure should be very simple, I will not list the procedures here. [host-aspnetcore-webapi-in-iis](https://huangzhenhong.github.io/host-aspnetcore-webapi-in-iis/)
@@ -116,13 +121,15 @@ Add the orgins which will access your WEB API, for example: http://localhost
 ### Angular2 Application
 
 By default, the browser will not send user authentication details to the server. We must configure out Angular2 application requests to send this information. 
-```
+
+```js
 this.http.get(this.testUrl, { withCredentials: true})
     .subscribe((data:any) => console.log(data));
 
 this.http.get(this.authUrl, {withCredentials: true})
     .subscribe((data:any) => console.log(data));
 ```
+
 ## Summary
 
 Above processes should be implemented without any failure, you can add more functionalites into it. I hope this artical will save couple of your valuable hours.
