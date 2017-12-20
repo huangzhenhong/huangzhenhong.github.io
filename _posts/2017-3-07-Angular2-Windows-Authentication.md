@@ -11,7 +11,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 ##### launchSetting.json
 
-```js
+```javascript
 "iisSettings": {
     "windowsAuthentication": true,
     "anonymousAuthentication": false,
@@ -24,7 +24,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 ```
 ##### web.config
 
-```js
+```javascript
     <aspNetCore processPath="%LAUNCHER_PATH%" 
                 arguments="%LAUNCHER_ARGS%" 
                 stdoutLogEnabled="false" 
@@ -49,7 +49,7 @@ Create a ASP.NET WebApi project with **Windows Authentication** checked, this wi
 
 Add the orgins which will access your WEB API, for example: http://localhost
 
-```c#
+```csharp
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
@@ -72,7 +72,7 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
 - option 1:　you can enable it globally by adding it in following method
 
-```c#
+```csharp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -91,7 +91,7 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
 - Option 2:　Or you can enable it in the controller class or action method
 
-```c#
+```sharp
     [Authorize]
     [Route("api/values")]
     [EnableCors("AllowSpecificOrigin")]
@@ -122,7 +122,7 @@ Add the orgins which will access your WEB API, for example: http://localhost
 
 By default, the browser will not send user authentication details to the server. We must configure out Angular2 application requests to send this information. 
 
-```js
+```javascript
 this.http.get(this.testUrl, { withCredentials: true})
     .subscribe((data:any) => console.log(data));
 
