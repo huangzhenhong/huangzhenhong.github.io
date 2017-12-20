@@ -24,19 +24,24 @@ This post is to domenstrate how to add disqus into jekyII. I have done it recent
 
 - Go to folder _includes and edit disqus.html, make sure following script is there.
 
-```JavaScript
+```HTML
 {% if site.disqus %}
 <div class="comments">
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 	    var disqus_shortname = '{{ site.disqus }}';
 	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        var dsq = document.createElement('script'); 
+		dsq.type = 'text/javascript'; dsq.async = true;
 	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	    })();
 	</script>
-	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<noscript>
+		Please enable JavaScript to view the 
+		<a href="http://disqus.com/?ref_noscript">
+		comments powered by Disqus.</a>
+	</noscript>
 </div>
 {% endif %}
 ```
