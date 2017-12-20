@@ -17,14 +17,14 @@ This post is to domenstrate how to add disqus into jekyII. I have done it recent
 ![config](https://huangzhenhong.github.io/images/config-disqus.png)
 - go to your jekyll project, edit _config.yml file, add the shortname(please make sure it is exact same with the shortname in Disqus configuration)
 
-```Python
+```JavaScript
     disqus: 
         huangzhenhong
 ```
 
 - Go to folder _includes and edit disqus.html, make sure following script is there.
 
-```Python
+```JavaScript
 {% if site.disqus %}
 <div class="comments">
 	<div id="disqus_thread"></div>
