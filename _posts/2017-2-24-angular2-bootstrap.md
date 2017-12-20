@@ -19,17 +19,21 @@ Go to [Bootstrap](http://getbootstrap.com/) official website, in "Getting starte
 Install it via npm([Node Package Manager](https://www.npmjs.com/get-npm)), make it available locally in your node_modules folder, so you can use it even if you don't have internet connection.
 
 I am using windows 7 as my development machine: following code can be ran through windows command console.
-{% highlight language %}
+
+```JavaScript
 npm install bootstrap@latest --save
-{% endhighlight %}
-After above command was ran successfully, you should find a new folder called bootstrap created in node_modules.  
+```
+
+After above command was ran successfully, you should find a new folder called bootstrap created in node_modules.  ··
 
 ### How to use it
 
 Open angular-cli.json file, update styles declaration.
-{% highlight language %}
+
+```JavaScript
 "styles": [
   "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ]
-{% endhighlight %}
+```
+
 You're all set, it's time to give it a try. 
