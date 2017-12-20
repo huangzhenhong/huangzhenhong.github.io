@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to include Bootstrap in Angular
+title: Bootstrap in Angular
 date: 2017-2-24 12:02:33
 ---
 
@@ -20,7 +20,7 @@ Install it via npm([Node Package Manager](https://www.npmjs.com/get-npm)), make 
 
 I am using windows 7 as my development machine: following code can be ran through windows command console.
 ```
-npm install bootstrap@3
+npm install bootstrap@latest --save
 ```
 After above command was ran successfully, you should find a new folder called bootstrap created in node_modules.  
 
